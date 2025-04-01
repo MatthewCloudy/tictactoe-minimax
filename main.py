@@ -1,16 +1,8 @@
-# This is a sample Python script.
+from game import *
+from player import Player
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    player_1 = Player("P1", 'X')
+    player_2 = Player("P2", 'O')
+    game = Game(player_1,player_2)
+    game.play()
