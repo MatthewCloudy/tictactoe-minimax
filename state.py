@@ -18,7 +18,7 @@ class State:
     def check_win(self, sign):
         if (self.board[0][0] == self.board[1][1] == self.board[2][2] == sign):
             return True
-        if (self.board[2][1] == self.board[1][1] == self.board[0][2] == sign):
+        if (self.board[2][0] == self.board[1][1] == self.board[0][2] == sign):
             return True
         for i in range(3):
             if(self.board[i][0] == self.board[i][1] == self.board[i][2] == sign):
