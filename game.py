@@ -10,6 +10,9 @@ class Game:
     def play(self):
         self.state.print_board()
         while True:
+            for move in self.state.next_moves(self.player_1.sign):
+                move[1].print_board()
+                print()
 
             player_1_turn = self.player_1.make_move(self.state.board)
             while self.state.set_board(player_1_turn[0], player_1_turn[1], self.player_1.sign):
@@ -23,6 +26,9 @@ class Game:
             elif status == 2:
                 print("Player 2 wins!")
                 return 2
+            elif status == -1:
+                print("Draw!")
+                return 0
             self.state.print_board()
             player_2_turn = self.player_2.make_move(self.state.board)
             while self.state.set_board(player_2_turn[0], player_2_turn[1], self.player_2.sign):
@@ -36,3 +42,6 @@ class Game:
             elif status == 2:
                 print("Player 2 wins!")
                 return 2
+            elif status == -1:
+                print("Draw!")
+                return 0
