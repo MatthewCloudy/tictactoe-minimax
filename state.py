@@ -35,12 +35,12 @@ class State:
         return True
 
     def check_status(self, player_1, player_2):
-        if self.is_board_full():
-            return -1
         if self.check_win(player_1.sign):
             return 1
         if self.check_win(player_2.sign):
             return 2
+        if self.is_board_full():
+            return -1
         return 0
 
 

@@ -20,7 +20,7 @@ def minimax(state, depth, max_move, player, heuristic):
             value, _ = minimax(new_state, depth - 1, True, player, heuristic)
             if value < best_value:
                 best_value = value
-                best_move = action
+                best_move = action[0]
         return best_value, best_move
 
 
@@ -98,8 +98,8 @@ def heuristic_smart(state, player):
             heuristic_value+=30
         elif opponent_points == 1 and empty_fields == 2:
             heuristic_value+=10
-        elif opponent_points == 2 and player_points == 1:
-            heuristic_value -= 10
+        # elif opponent_points == 2 and player_points == 1:
+        #     heuristic_value -= 10
 
 
     return heuristic_value
