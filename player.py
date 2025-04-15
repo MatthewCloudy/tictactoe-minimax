@@ -13,7 +13,7 @@ class Player:
             time.sleep(2)
             a = minimax(state,self.depth,True,self, self.heuristic)
             print(f"Rusza się gracz {self.name}")
-            print(a)
+            # print(a)
             row = a[1][0]
             column = a[1][1]
             # move = input(f"{self.name}, choose your move (e.g., '12'): ")

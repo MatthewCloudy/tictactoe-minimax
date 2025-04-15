@@ -18,20 +18,20 @@ class Game:
 
             player_1_turn = self.player_1.make_move(self.state)
             while self.state.set_board(player_1_turn[0], player_1_turn[1], self.player_1.sign):
-                print("Invalid move, try again")
+                print("Nieprawidlowy ruch, sprobuj ponownie")
                 player_1_turn = self.player_1.make_move(self.state)
 
             status = self.state.check_status(self.player_1, self.player_2)
             if status == 1:
-                print("Player 1 wins!")
+                print(f"{self.player_1.name} wygrywa!")
                 self.state.print_board()
                 return 1
             elif status == 2:
-                print("Player 2 wins!")
+                print(f"{self.player_2.name} wygrywa!")
                 self.state.print_board()
                 return 2
             elif status == -1:
-                print("Draw!")
+                print("Remis!")
                 self.state.print_board()
                 return 0
             self.state.print_board()
@@ -43,16 +43,16 @@ class Game:
             #     print()
             player_2_turn = self.player_2.make_move(self.state)
             while self.state.set_board(player_2_turn[0], player_2_turn[1], self.player_2.sign):
-                print("Invalid move, try again")
+                print("Nieprawidlowy ruch, sprobuj ponownie")
                 player_2_turn = self.player_2.make_move(self.state)
             self.state.print_board()
             status = self.state.check_status(self.player_1, self.player_2)
             if status == 1:
-                print("Player 1 wins!")
+                print(f"{self.player_1.name} wygrywa!")
                 return 1
             elif status == 2:
-                print("Player 2 wins!")
+                print(f"{self.player_2.name} wygrywa!")
                 return 2
             elif status == -1:
-                print("Draw!")
+                print("Remis!")
                 return 0
